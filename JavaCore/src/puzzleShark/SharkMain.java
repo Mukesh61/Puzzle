@@ -46,7 +46,13 @@ public class SharkMain {
 				maxFish=Collections.max(fishTank);
 				minFish=Collections.min(fishTank);
 				swapFish=minFish-sharkWeight+1;
-				fishTank.add(swapFish);
+				if(swapFish<sharkWeight) {
+					fishTank.add(swapFish);
+					
+				}else {
+					swapFish=sharkWeight-1;
+					fishTank.add(swapFish);
+				}
 				indexi=fishTank.indexOf(maxFish);
 				fishTank.remove(indexi);
 				System.out.println("i am adding a fish of "+swapFish+"removing the "+maxFish);
